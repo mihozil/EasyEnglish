@@ -1,0 +1,101 @@
+{
+	"lessonid" : "1",
+	"questions"  : [
+		{
+			"idx" : "0",
+			"type" : "1", 
+			"texts":["They work"],
+			"thumbs": ["work.jpg","build.jpg","bake.jpg","type.jpg"],
+			"answer":"0",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "1",
+			"type" : "1", 
+			"texts":["The man builds the wall"],
+			"thumbs": ["work.jpg","build.jpg","bake.jpg","type.jpg"],
+			"answer":"1",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "2",
+			"type" : "1", 
+			"texts":["The woman bakes cookies"],
+			"thumbs": ["work.jpg","build.jpg","bake.jpg","type.jpg"],
+			"answer":"2",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "3",
+			"type" : "1", 
+			"texts":["He types in the computer"],
+			"thumbs": ["work.jpg","build.jpg","bake.jpg","type.jpg"],
+			"answer":"3",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "4",
+			"type" : "2", 
+			"texts":["Work"],
+			"thumbs": ["work.jpg"],
+			"answer":"0",
+             "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "5",
+			"type" : "2", 
+			"texts":["Build"],
+			"thumbs": ["build.jpg"],
+			"answer":"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "6",
+			"type" : "2", 
+			"texts":["Bake"],
+			"thumbs": ["bake.jpg"],
+			"answer" :"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "7",
+			"type" : "2", 
+			"texts":["Type"],
+			"thumbs": ["type.jpg"],
+			"answer" :"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "8",
+			"type" : "3", 
+			"texts":["They work","The man builds the wall","The woman bakes cookies","He types in the computer"],
+			"thumbs": ["work.jpg"],
+			"answer" :"0",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "9",
+			"type" : "3", 
+			"texts":["They work","The man builds the wall","The woman bakes cookies","He types in the computer"],
+			"thumbs": ["build.jpg"],
+			"answer" :"1",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "10",
+			"type" : "3", 
+			"texts":["They work","The man builds the wall","The woman bakes cookies","He types in the computer"],
+			"thumbs": ["bake.jpg"],
+			"answer" :"2",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "11",
+			"type" : "3", 
+			"texts":["They work","The man builds the wall","The woman bakes cookies","He types in the computer"],
+			"thumbs": ["type.jpg"],
+			"answer" :"3",
+            "tip" : "Touch the true sentence of the photo"
+		}
+	]
+}

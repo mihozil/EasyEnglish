@@ -1,0 +1,101 @@
+{
+	"lessonid" : "1",
+	"questions"  : [
+		{
+			"idx" : "0",
+			"type" : "1", 
+			"texts":["Kale is a healthy kind of vegetable"],
+			"thumbs": ["kaleVegetable.jpg","cucumber.jpg","cabage.jpg","onion.jpg"],
+			"answer":"0",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "1",
+			"type" : "1", 
+			"texts":["Cucumber is cool"],
+			"thumbs": ["kaleVegetable.jpg","cucumber.jpg","cabage.jpg","onion.jpg"],
+			"answer":"1",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "2",
+			"type" : "1", 
+			"texts":["Cabage is healthy"],
+			"thumbs": ["kaleVegetable.jpg","cucumber.jpg","cabage.jpg","onion.jpg"],
+			"answer":"2",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "3",
+			"type" : "1", 
+			"texts":["Onion is spicy"],
+			"thumbs": ["kaleVegetable.jpg","cucumber.jpg","cabage.jpg","onion.jpg"],
+			"answer":"3",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "4",
+			"type" : "2", 
+			"texts":["Kale vegetable"],
+			"thumbs": ["kaleVegetable.jpg"],
+			"answer":"0",
+             "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "5",
+			"type" : "2", 
+			"texts":["Cucumber"],
+			"thumbs": ["cucumber.jpg"],
+			"answer":"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "6",
+			"type" : "2", 
+			"texts":["Cabage"],
+			"thumbs": ["cabage.jpg"],
+			"answer" :"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "7",
+			"type" : "2", 
+			"texts":["Onion"],
+			"thumbs": ["onion.jpg"],
+			"answer" :"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "8",
+			"type" : "3", 
+			"texts":["Kale is a healthy kind of vegetable","Cucumber is cool","Cabage is healthy","Onion is spicy"],
+			"thumbs": ["kaleVegetable.jpg"],
+			"answer" :"0",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "9",
+			"type" : "3", 
+			"texts":["Kale is a healthy kind of vegetable","Cucumber is cool","Cabage is healthy","Onion is spicy"],
+			"thumbs": ["cucumber.jpg"],
+			"answer" :"1",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "10",
+			"type" : "3", 
+			"texts":["Kale is a healthy kind of vegetable","Cucumber is cool","Cabage is healthy","Onion is spicy"],
+			"thumbs": ["cabage.jpg"],
+			"answer" :"2",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "11",
+			"type" : "3", 
+			"texts":["Kale is a healthy kind of vegetable","Cucumber is cool","Cabage is healthy","Onion is spicy"],
+			"thumbs": ["onion.jpg"],
+			"answer" :"3",
+            "tip" : "Touch the true sentence of the photo"
+		}
+	]
+}

@@ -1,0 +1,101 @@
+{
+	"lessonid" : "1",
+	"questions"  : [
+		{
+			"idx" : "0",
+			"type" : "1", 
+			"texts":["What a beautiful lotus"],
+			"thumbs": ["ls1_lotus.jpg","ls1_peach.jpg","ls1_kale.jpg","ls1_grape_fruit.jpg"],
+			"answer":"0",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "1",
+			"type" : "1", 
+			"texts":["Spring peach"],
+			"thumbs": ["ls1_lotus.jpg","ls1_peach.jpg","ls1_kale.jpg","ls1_grape_fruit.jpg"],
+			"answer":"1",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "2",
+			"type" : "1", 
+			"texts":["The field of kale flower"],
+			"thumbs": ["ls1_lotus.jpg","ls1_peach.jpg","ls1_kale.jpg","ls1_grape_fruit.jpg"],
+			"answer":"2",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "3",
+			"type" : "1", 
+			"texts":["Look at the grapefruit blossom"],
+			"thumbs": ["ls1_lotus.jpg","ls1_peach.jpg","ls1_kale.jpg","ls1_grape_fruit.jpg"],
+			"answer":"3",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "4",
+			"type" : "2", 
+			"texts":["Lotus"],
+			"thumbs": ["ls1_lotus.jpg"],
+			"answer":"0",
+             "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "5",
+			"type" : "2", 
+			"texts":["Peach"],
+			"thumbs": ["ls1_peach.jpg"],
+			"answer":"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "6",
+			"type" : "2", 
+			"texts":["Kale"],
+			"thumbs": ["ls1_kale.jpg"],
+			"answer" :"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "7",
+			"type" : "2", 
+			"texts":["Grape fruit"],
+			"thumbs": ["ls1_grape_fruit.jpg"],
+			"answer" :"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "8",
+			"type" : "3", 
+			"texts":["What a beautiful lotus","Spring peach","The field of kale flower","Look at the grapefruit blossom"],
+			"thumbs": ["ls1_lotus.jpg"],
+			"answer" :"0",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "9",
+			"type" : "3", 
+			"texts":["What a beautiful lotus","Spring peach","The field of kale flower","Look at the grapefruit blossom"],
+			"thumbs": ["ls1_peach.jpg"],
+			"answer" :"1",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "10",
+			"type" : "3", 
+			"texts":["What a beautiful lotus","Spring peach","The field of kale flower","Look at the grapefruit blossom"],
+			"thumbs": ["ls1_kale.jpg.jpg"],
+			"answer" :"2",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "11",
+			"type" : "3", 
+			"texts":["What a beautiful lotus","Spring peach","The field of kale flower","Look at the grapefruit blossom"],
+			"thumbs": ["ls1_grape_fruit.jpg"],
+			"answer" :"3",
+            "tip" : "Touch the true sentence of the photo"
+		}
+	]
+}

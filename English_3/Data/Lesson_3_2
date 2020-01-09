@@ -1,0 +1,101 @@
+{
+	"lessonid" : "1",
+	"questions"  : [
+		{
+			"idx" : "0",
+			"type" : "1", 
+			"texts":["Go by bus"],
+			"thumbs": ["bus.jpg","motorbike.jpg","bike.jpg","car.jpg"],
+			"answer":"0",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "1",
+			"type" : "1", 
+			"texts":["Go by motorbike"],
+			"thumbs": ["bus.jpg","motorbike.jpg","bike.jpg","car.jpg"],
+			"answer":"1",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "2",
+			"type" : "1", 
+			"texts":["Go by bike"],
+			"thumbs": ["bus.jpg","motorbike.jpg","bike.jpg","car.jpg"],
+			"answer":"2",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "3",
+			"type" : "1", 
+			"texts":["Go by car"],
+			"thumbs": ["bus.jpg","motorbike.jpg","bike.jpg","car.jpg"],
+			"answer":"3",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "4",
+			"type" : "2", 
+			"texts":["Bus"],
+			"thumbs": ["bus.jpg"],
+			"answer":"0",
+             "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "5",
+			"type" : "2", 
+			"texts":["Motorbike"],
+			"thumbs": ["motorbike.jpg"],
+			"answer":"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "6",
+			"type" : "2", 
+			"texts":["Bike"],
+			"thumbs": ["bike.jpg"],
+			"answer" :"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "7",
+			"type" : "2", 
+			"texts":["Car"],
+			"thumbs": ["car.jpg"],
+			"answer" :"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "8",
+			"type" : "3", 
+			"texts":["Go by bus","Go by motorbike","Go by bike","Go by car"],
+			"thumbs": ["bus.jpg"],
+			"answer" :"0",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "9",
+			"type" : "3", 
+			"texts":["Go by bus","Go by motorbike","Go by bike","Go by car"],
+			"thumbs": ["motorbike.jpg"],
+			"answer" :"1",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "10",
+			"type" : "3", 
+			"texts":["Go by bus","Go by motorbike","Go by bike","Go by car"],
+			"thumbs": ["bike.jpg"],
+			"answer" :"2",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "11",
+			"type" : "3", 
+			"texts":["Go by bus","Go by motorbike","Go by bike","Go by car"],
+			"thumbs": ["car.jpg"],
+			"answer" :"3",
+            "tip" : "Touch the true sentence of the photo"
+		}
+	]
+}

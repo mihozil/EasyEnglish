@@ -1,0 +1,101 @@
+{
+	"lessonid" : "1",
+	"questions"  : [
+		{
+			"idx" : "0",
+			"type" : "1", 
+			"texts":["They are dancing"],
+			"thumbs": ["campingDance.jpg","swim.jpg","trek.jpg","cook.jpg"],
+			"answer":"0",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "1",
+			"type" : "1", 
+			"texts":["People are swimming"],
+			"thumbs": ["campingDance.jpg","swim.jpg","trek.jpg","cook.jpg"],
+			"answer":"1",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "2",
+			"type" : "1", 
+			"texts":["They go trekking"],
+			"thumbs": ["campingDance.jpg","swim.jpg","trek.jpg","cook.jpg"],
+			"answer":"2",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "3",
+			"type" : "1", 
+			"texts":["The girl cooks for camping"],
+			"thumbs": ["campingDance.jpg","swim.jpg","trek.jpg","cook.jpg"],
+			"answer":"3",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "4",
+			"type" : "2", 
+			"texts":["Dance"],
+			"thumbs": ["campingDance.jpg"],
+			"answer":"0",
+             "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "5",
+			"type" : "2", 
+			"texts":["Swim"],
+			"thumbs": ["swim.jpg"],
+			"answer":"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "6",
+			"type" : "2", 
+			"texts":["Trek"],
+			"thumbs": ["trek.jpg"],
+			"answer" :"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "7",
+			"type" : "2", 
+			"texts":["Cook"],
+			"thumbs": ["cook.jpg"],
+			"answer" :"0",
+            "tip" : "Press sound button to listen once again and go to the next question"
+		},
+		{
+			"idx" : "8",
+			"type" : "3", 
+			"texts":["They are dancing","People are swimming","The go trekking","The girl cooks for camping"],
+			"thumbs": ["campingDance.jpg"]
+			"answer" :"0",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "9",
+			"type" : "3", 
+			"texts":["They are dancing","People are swimming","The go trekking","The girl cooks for camping"],
+			"thumbs": ["swim.jpg"],
+			"answer" :"1",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "10",
+			"type" : "3", 
+			"texts":["They are dancing","People are swimming","The go trekking","The girl cooks for camping"],
+			"thumbs": ["trek.jpg"],
+			"answer" :"2",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "11",
+			"type" : "3", 
+			"texts":["They are dancing","People are swimming","The go trekking","The girl cooks for camping"],
+			"thumbs": ["cook.jpg"],
+			"answer" :"3",
+            "tip" : "Touch the true sentence of the photo"
+		}
+	]
+}
