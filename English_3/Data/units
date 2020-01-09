@@ -2,22 +2,25 @@
 	"units" :
 	[
 	{
-		"unitId" : "1",
+		"unitId" : 1,
 		"title" : "Things in life",
 		"desc" : "Fruit, Vegetables and Flowers",
-		"thumb" : "unit_1"
+		"thumb" : "unit_1.jpg",
+        "totalLessons" : 3
 	},
 	{
-		"unitId" : "2",
+		"unitId" : 2,
 		"title" : "Daily Activities",
 		"desc" : "At home, at Work and at School",
-		"thumb" : "unit_2"
+		"thumb" : "unit_2.jpg",
+        "totalLessons" : 3
 	},
 	{
-		"unitId" : "3",
+		"unitId" : 3,
 		"title" : "Go camping",
 		"desc" : "Preparation, Travel and Activities",
-		"thumb" : "unit_3"
+		"thumb" : "unit_3.jpg",
+        "totalLessons" : 3
 	}
 	]
 }

@@ -11,11 +11,20 @@ import UIKit
 
 
 class LessonCollectionCell : UICollectionViewCell {
-    let thumbImgView = UIImageView.init()
+    static var identifier : String = "LessionColletionCell"
+    
+    var thumbImgView : UIImageView = {
+        let _thumbImgView = UIImageView.init()
+        _thumbImgView.contentMode = UIView.ContentMode.scaleAspectFit
+        _thumbImgView.layer.cornerRadius = 3.0
+        _thumbImgView.layer.masksToBounds = true
+        
+        return _thumbImgView
+    }()
     var titleLabel : UILabel = {
         let _titleLabel = UILabel.init()
-        _titleLabel.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        
+        _titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+    
         return _titleLabel
     }()
     var descriptionLabel : UILabel = {
@@ -23,16 +32,32 @@ class LessonCollectionCell : UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         return label
     }()
+    var progressView : CircularProgressView = {
+        let _progressView = CircularProgressView.init()
+        _progressView.progressClr = UIColor.gray
+        _progressView.trackClr = UIColor.lightGray.withAlphaComponent(0.4)
+        return _progressView
+    }()
+    
+    var progressImageView : UIImageView = {
+        let imageView = UIImageView.init()
+        imageView.image = UIImage.init(named: "tick")
+        return imageView
+    }()
     
     override init(frame: CGRect) {
-        
-        self.object = LessonObject.init()
         
         super.init(frame: frame)
         
         self.contentView.addSubview(thumbImgView)
         self.contentView.addSubview(titleLabel)
         self.contentView.addSubview(descriptionLabel)
+        self.contentView.addSubview(progressView)
+        self.contentView.addSubview(progressImageView)
+        
+        thumbImgView.contentMode = UIView.ContentMode.scaleAspectFit
+        thumbImgView.contentMode = UIView.ContentMode.scaleAspectFit
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,31 +68,60 @@ class LessonCollectionCell : UICollectionViewCell {
         super.layoutSubviews()
         var x: Double = 10.0
         var y: Double = 10.0
-        thumbImgView.frame = CGRect.init(x: x, y: y, width: 100.0, height: 100.0)
-        x += (100+10)
+        thumbImgView.frame = CGRect.init(x: x, y: y, width: 90.0, height: 60.0)
+        x += (90+10)
         
-        self.titleLabel.frame = CGRect.init(x: x, y: y, width: Double(self.contentView.frame.size.width - CGFloat(x) - CGFloat(10.0)), height: 50.0)
+        self.descriptionLabel.frame = CGRect.init(x: x, y: y, width: Double(Double(self.contentView.width) - x - 10), height: 24.0)
         
-        y += 50
-        self.descriptionLabel.frame = CGRect.init(x: x, y: y, width: Double(self.titleLabel.frame.size.width), height: 50.0)
+        y += 24 + 3
+        self.titleLabel.frame = CGRect.init(x: x, y: y, width: Double(self.contentView.frame.size.width - CGFloat(x) - CGFloat(10.0)), height: 24.0)
+        self.progressView.frame = CGRect.init(x: Double(self.contentView.width)-24-20, y: y, width: 24, height: 24)
+        self.progressImageView.frame = self.progressView.frame.inset(by: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
+        
     }
     
-    var object: LessonObject {
+    var lesson: LessonModel? {
         
         didSet {
-            if let thumb = self.object.thumb {
-                let url = URL.init(string: thumb)!
-                thumbImgView.setImageWith(url);
+            thumbImgView.image = UIImage(named: self.lesson!.thumb);
+            
+            titleLabel.text = self.lesson!.title
+            descriptionLabel.text = self.lesson!.detail
+            if self.lesson!.toQuestion<self.lesson!.totalQuestion {
+                self.progressView.setProgressWithAnimation(duration: 0, value: Float(self.lesson!.toQuestion)/Float(self.lesson!.totalQuestion))
+                self.progressImageView.isHidden = true
+                if self.lesson?.toQuestion == 0 {
+                    self.progressView.isHidden = true
+                } else {
+                    self.progressView.isHidden = false
+                }
+            } else {
+                self.progressImageView.isHidden = false
+                self.progressView.isHidden = true
             }
             
-            titleLabel.text = self.object.title
-            descriptionLabel.text = self.object.description
+            
         }
     }
 }
 
-class LessonObject : NSObject {
-    public var thumb : String?
-    public var title: String?
+class LessonModel  {
+    var thumb : String
+    var title: String
+    var detail : String
+    var lessonId : Int
+    var toQuestion : Int
+    var totalQuestion : Int
+    
+    init(lessonId: Int, thumb: String, title: String, detail: String, totalQuestion: Int) {
+        self.lessonId = lessonId
+        self.thumb = thumb
+        self.title = title
+        self.detail = detail
+        self.toQuestion = 0
+        self.totalQuestion = totalQuestion
+    }
+    
+    
     
 }

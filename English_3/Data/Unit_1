@@ -3,19 +3,22 @@
 	"lessons" : [
 		{
 			"lessonId" : "1",
-			"thumb" : "https://images.unsplash.com/photo-1563423048606-c46d160a4c4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+            "totalQuestion" : "12",
+			"thumb" : "flower.jpg",
 			"title" : "Flowers",
 			"detail" : "Lotus, Peach, Kale, Grape fruit"
 		},
 		{
 			"lessonId" : "2",
-			"thumb" : "https://media.swncdn.com/cms/CW/faith/47975-fruit-basket-pexels-1200.1200w.tn.jpg",
+            "totalQuestion" : "12",
+			"thumb" : "fruit.jpg",
 			"title" : "Fruit",
 			"detail" : "Orange, Apple, Banana, Mango"
 		},
 		{
 			"lessonId" : "3",
-			"thumb" : "https://www.healthyeatinghub.com.au/wp-content/uploads/2018/06/avocado-dip-and-vegetable-dips-group-1024x683.jpg",
+            "totalQuestion" : "12",
+			"thumb" : "vegetable.jpg",
 			"title" : "Vegetable",
 			"detail" : "Kale, Cucumber, Cabage, Onion"
 		}

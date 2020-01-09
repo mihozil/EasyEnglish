@@ -69,7 +69,7 @@
 			"idx" : "8",
 			"type" : "3", 
 			"texts":["They are dancing","People are swimming","The go trekking","The girl cooks for camping"],
-			"thumbs": ["campingDance.jpg"]
+			"thumbs": ["campingDance.jpg"],
 			"answer" :"0",
             "tip" : "Touch the true sentence of the photo"
 		},

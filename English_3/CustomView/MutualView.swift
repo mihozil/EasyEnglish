@@ -12,7 +12,9 @@ class LabelViewWithSoundButton : UIView {
     let button : WidenButton =
     {
         let _button = WidenButton.init()
-        _button.setImage(UIImage(named: "sound"), for: UIControl.State.normal)
+        let soundImage = UIImage.init(named: "sound")?.withRenderingMode(.alwaysTemplate)
+        _button.setImage(soundImage, for: UIControl.State.normal)
+        _button.tintColor = UIColor.gray
         _button.left = 5
         _button.top = 5
         return _button
@@ -21,7 +23,6 @@ class LabelViewWithSoundButton : UIView {
     let label : UILabel = {
         let _label = UILabel.init()
         _label.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.semibold)
-        _label.textAlignment = NSTextAlignment.center
         _label.numberOfLines = 0
         _label.top = 0
         return _label
@@ -31,6 +32,9 @@ class LabelViewWithSoundButton : UIView {
         super.init(frame: frame)
         self.addSubview(button)
         self.addSubview(label)
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = 1.0
+        self.layer.cornerRadius = 5.0
     }
     
     required init?(coder: NSCoder) {
@@ -38,9 +42,12 @@ class LabelViewWithSoundButton : UIView {
     }
     override var frame: CGRect {
         didSet {
-            button.height = self.frame.size.height - 10
-            button.width = button.height
-            label.frame = CGRect.init(x: button.right+5, y: 0, width: self.frame.size.width-(button.right+5), height: self.frame.size.height)
+            if self.frame != CGRect.zero {
+                button.height = self.frame.size.height - 10
+                button.width = button.height
+                label.frame = CGRect.init(x: button.right+10, y: 0, width: self.frame.size.width-(button.right+10), height: self.height)
+            }
+            
         }
     }
     
@@ -88,5 +95,4 @@ class WidenButton : UIButton {
             handler()
         }
     }
-    
 }

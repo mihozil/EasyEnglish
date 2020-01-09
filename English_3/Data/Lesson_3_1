@@ -5,7 +5,7 @@
 			"idx" : "0",
 			"type" : "1", 
 			"texts":["Food for camping"],
-			"thumbs": ["food.jpg","drinks.jpg","clothes.jpg","shampoo.jpg"],
+			"thumbs": ["food.jpg","drinks.jpg","clothes.jpg","shampoo.png"],
 			"answer":"0",
             "tip" : "Touch the true photo"
 		},
@@ -13,7 +13,7 @@
 			"idx" : "1",
 			"type" : "1", 
 			"texts":["Drinks for camping"],
-			"thumbs": ["food.jpg","drinks.jpg","clothes.jpg","shampoo.jpg"],
+			"thumbs": ["food.jpg","drinks.jpg","clothes.jpg","shampoo.png"],
 			"answer":"1",
             "tip" : "Touch the true photo"
 		},
@@ -21,7 +21,7 @@
 			"idx" : "2",
 			"type" : "1", 
 			"texts":["Clothes for camping"],
-			"thumbs": ["food.jpg","drinks.jpg","clothes.jpg","shampoo.jpg"],
+			"thumbs": ["food.jpg","drinks.jpg","clothes.jpg","shampoo.png"],
 			"answer":"2",
             "tip" : "Touch the true photo"
 		},
@@ -29,7 +29,7 @@
 			"idx" : "3",
 			"type" : "1", 
 			"texts":["Shampoo for camping"],
-			"thumbs": ["food.jpg","drinks.jpg","clothes.jpg","shampoo.jpg"],
+			"thumbs": ["food.jpg","drinks.jpg","clothes.jpg","shampoo.png"],
 			"answer":"3",
             "tip" : "Touch the true photo"
 		},
@@ -61,7 +61,7 @@
 			"idx" : "7",
 			"type" : "2", 
 			"texts":["Shampoo"],
-			"thumbs": ["shampoo.jpg"],
+			"thumbs": ["shampoo.png"],
 			"answer" :"0",
             "tip" : "Press sound button to listen once again and go to the next question"
 		},
@@ -93,7 +93,7 @@
 			"idx" : "11",
 			"type" : "3", 
 			"texts":["Food for camping","Drinks for camping","Clothes for camping","Shampoo for camping"],
-			"thumbs": ["shampoo.jpg"],
+			"thumbs": ["shampoo.png"],
 			"answer" :"3",
             "tip" : "Touch the true sentence of the photo"
 		}

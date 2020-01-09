@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class QuestionFlowManager {
+    
+    static let shared = QuestionFlowManager()
+    
+    var currentUnitId : Int?
+    var currentLessonId : Int?
+    
+}

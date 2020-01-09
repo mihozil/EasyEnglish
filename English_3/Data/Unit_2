@@ -4,7 +4,7 @@
 		{
 			"lessonId" : "1",
             "totalQuestion" : "12",
-			"thumb" : "home.jpg",
+			"thumb" : "lessonHome.jpg",
 			"title" : "At Home",
 			"detail" : "Sleep, watch TV, eat, talk"
 		},

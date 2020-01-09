@@ -45,4 +45,55 @@ class ToastView: NSObject {
         };
     }
     
+    static var currentToastView : UIView?
+    
+    class func showToastView(text: String, time : Int) {
+        if let topViewController = self.topViewController() {
+            if let toastView = currentToastView {
+                toastView .removeFromSuperview()
+                currentToastView = nil
+            }
+            
+            let label = UILabel.init()
+            label.font = UIFont.systemFont(ofSize: 15)
+            label.text = text
+            label.textColor = UIColor(red: 234.0/255.0, green: 234.0/255.0, blue: 234.0/255.0, alpha: 1.0)
+            label.backgroundColor = UIColor.black.withAlphaComponent(0.66)
+            label.layer.cornerRadius = 5.0
+            label.layer.masksToBounds = true
+            label.numberOfLines = 0
+            label.textAlignment = NSTextAlignment.center
+            let size = label.sizeThatFits(CGSize(width: topViewController.view.width/1.5, height: CGFloat(MAXFLOAT)))
+            label.width = size.width+20
+            label.height = size.height+10
+            label.center = topViewController.view.center
+            
+            
+            topViewController.view.addSubview(label)
+            label.alpha = 0
+            UIView.animate(withDuration: 0.1, animations: {
+                label.alpha = 1.0
+            }, completion: { _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(time*1000), execute: {
+                    label.removeFromSuperview()
+                    currentToastView = nil
+                })
+            })
+            
+            currentToastView = label
+        }
+        
+        
+    }
+    
+    class func topViewController() -> UIViewController? {
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            return topController
+        }
+        return nil
+    }
+    
 }
