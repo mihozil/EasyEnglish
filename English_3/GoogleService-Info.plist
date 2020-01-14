@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>328849604751-sk6e9glbvnhh1nq21ip9lafnjunkfpsl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.328849604751-sk6e9glbvnhh1nq21ip9lafnjunkfpsl</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDR5tscK-c2-cmtV0ZGzDFVD7SevKWLAv4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>328849604751</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Mihozil.EasyEnglish</string>
+	<key>PROJECT_ID</key>
+	<string>easyenglish-c3bd8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>easyenglish-c3bd8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:328849604751:ios:8671711bea8695fd2af0fa</string>
+	<key>DATABASE_URL</key>
+	<string>https://easyenglish-c3bd8.firebaseio.com</string>
+</dict>
+</plist>

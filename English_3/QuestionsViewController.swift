@@ -44,6 +44,7 @@ class MultiSelectionQuestionsViewController: UIViewController {
         collectionView?.register(MultiSelectQuestionCollectionViewCell.self, forCellWithReuseIdentifier: MultiSelectQuestionCollectionViewCell.identifier)
         collectionView?.register(ListenSpeakQuestionCollectionViewCell.self, forCellWithReuseIdentifier: ListenSpeakQuestionCollectionViewCell.identifier)
         collectionView?.register(MultiSelectSecondTypeCollectionViewCell.self, forCellWithReuseIdentifier: MultiSelectSecondTypeCollectionViewCell.identifier)
+        collectionView?.register(RearrangementQuestionCollectionViewCell.self, forCellWithReuseIdentifier: RearrangementQuestionCollectionViewCell.identifier)
         
         self.view.addSubview(collectionView!)
         collectionView?.isPagingEnabled = true
@@ -243,6 +244,9 @@ extension MultiSelectionQuestionsViewController: UICollectionViewDataSource {
         }
         if questionModel.type == 3 {
             return MultiSelectSecondTypeCollectionViewCell.identifier
+        }
+        if questionModel.type == 4 {
+            return RearrangementQuestionCollectionViewCell.identifier
         }
         return "123" // update later
     }

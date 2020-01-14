@@ -37,6 +37,7 @@
 		A02C4CCB23C6E6A400CD47EF /* Lesson_3_1 in Resources */ = {isa = PBXBuildFile; fileRef = A02C4CCA23C6E6A400CD47EF /* Lesson_3_1 */; };
 		A02C4CCD23C6E77B00CD47EF /* Lesson_3_2 in Resources */ = {isa = PBXBuildFile; fileRef = A02C4CCC23C6E77B00CD47EF /* Lesson_3_2 */; };
 		A02C4CCF23C6E89500CD47EF /* Lesson_3_3 in Resources */ = {isa = PBXBuildFile; fileRef = A02C4CCE23C6E89500CD47EF /* Lesson_3_3 */; };
+		A02EB9B123C86B46008E4341 /* Lesson_1_4 in Resources */ = {isa = PBXBuildFile; fileRef = A02EB9B023C86B46008E4341 /* Lesson_1_4 */; };
 		A02F7EC223AB3446004FA6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F7EC123AB3446004FA6B7 /* AppDelegate.swift */; };
 		A02F7EC423AB3446004FA6B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F7EC323AB3446004FA6B7 /* SceneDelegate.swift */; };
 		A02F7EC623AB3446004FA6B7 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F7EC523AB3446004FA6B7 /* LessonViewController.swift */; };
@@ -46,6 +47,9 @@
 		A02F7ED923AB3447004FA6B7 /* English_3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F7ED823AB3447004FA6B7 /* English_3Tests.swift */; };
 		A02F7EE423AB3447004FA6B7 /* English_3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F7EE323AB3447004FA6B7 /* English_3UITests.swift */; };
 		A02F7EF523AB387B004FA6B7 /* LessonCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F7EF423AB387B004FA6B7 /* LessonCollectionCell.swift */; };
+		A0344E3423CC1EFC002FA68A /* Lesson_1_5 in Resources */ = {isa = PBXBuildFile; fileRef = A0344E3323CC1EFB002FA68A /* Lesson_1_5 */; };
+		A0344E3623CC214A002FA68A /* Lesson_1_6 in Resources */ = {isa = PBXBuildFile; fileRef = A0344E3523CC2149002FA68A /* Lesson_1_6 */; };
+		A0344E3823CC4B94002FA68A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0344E3723CC4B94002FA68A /* GoogleService-Info.plist */; };
 		A0395C4123AE195E00B83D31 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0395C4023AE195E00B83D31 /* DataManager.swift */; };
 		A0395C4323B0AC9200B83D31 /* ToastViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0395C4223B0AC9200B83D31 /* ToastViews.swift */; };
 		A03EFB2C23B5BD4A0071E09D /* Lesson_1_1 in Resources */ = {isa = PBXBuildFile; fileRef = A03EFB2B23B5BD4A0071E09D /* Lesson_1_1 */; };
@@ -155,6 +159,7 @@
 		A02C4CCA23C6E6A400CD47EF /* Lesson_3_1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lesson_3_1; sourceTree = "<group>"; };
 		A02C4CCC23C6E77B00CD47EF /* Lesson_3_2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lesson_3_2; sourceTree = "<group>"; };
 		A02C4CCE23C6E89500CD47EF /* Lesson_3_3 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lesson_3_3; sourceTree = "<group>"; };
+		A02EB9B023C86B46008E4341 /* Lesson_1_4 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lesson_1_4; sourceTree = "<group>"; };
 		A02F7EBE23AB3446004FA6B7 /* English_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = English_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02F7EC123AB3446004FA6B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A02F7EC323AB3446004FA6B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +176,9 @@
 		A02F7EE523AB3447004FA6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A02F7EF123AB344F004FA6B7 /* English_3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "English_3-Bridging-Header.h"; sourceTree = "<group>"; };
 		A02F7EF423AB387B004FA6B7 /* LessonCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonCollectionCell.swift; sourceTree = "<group>"; };
+		A0344E3323CC1EFB002FA68A /* Lesson_1_5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lesson_1_5; sourceTree = "<group>"; };
+		A0344E3523CC2149002FA68A /* Lesson_1_6 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lesson_1_6; sourceTree = "<group>"; };
+		A0344E3723CC4B94002FA68A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0395C4023AE195E00B83D31 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A0395C4223B0AC9200B83D31 /* ToastViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViews.swift; sourceTree = "<group>"; };
 		A03EFB2B23B5BD4A0071E09D /* Lesson_1_1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lesson_1_1; sourceTree = "<group>"; };
@@ -314,6 +322,7 @@
 				A02B9B5223BEFEA000EBCC34 /* UnitController.swift */,
 				A0F647D923C49F6100EDE18B /* LoginViewController.swift */,
 				A06A481223C5B7B8004EBA27 /* SettingViewController.swift */,
+				A0344E3723CC4B94002FA68A /* GoogleService-Info.plist */,
 				A043F43D23B8A1410043FEB1 /* Data */,
 				A03EFB4023B6022D0071E09D /* CustomView */,
 				A03EFB4323B618930071E09D /* Sound */,
@@ -427,6 +436,9 @@
 				A06A480423C596AF004EBA27 /* Lesson_2_1 */,
 				A0F647C923C4949E00EDE18B /* Lesson_1_2 */,
 				A0F647D323C49BE400EDE18B /* Lesson_1_3 */,
+				A0344E3323CC1EFB002FA68A /* Lesson_1_5 */,
+				A0344E3523CC2149002FA68A /* Lesson_1_6 */,
+				A02EB9B023C86B46008E4341 /* Lesson_1_4 */,
 				A06A480823C5B129004EBA27 /* Lesson_2_3 */,
 				A02C4CCA23C6E6A400CD47EF /* Lesson_3_1 */,
 				A02C4CCC23C6E77B00CD47EF /* Lesson_3_2 */,
@@ -555,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A02C4CB723C6E1C900CD47EF /* bus.jpg in Resources */,
+				A02EB9B123C86B46008E4341 /* Lesson_1_4 in Resources */,
 				A0F647D823C49D7F00EDE18B /* orange.jpg in Resources */,
 				A06A47F823C59543004EBA27 /* talk.jpg in Resources */,
 				A02B9B5B23BF297E00EBCC34 /* units in Resources */,
@@ -600,6 +613,7 @@
 				A043F44523B8BF110043FEB1 /* fruit.jpg in Resources */,
 				A02C4CC523C6E32B00CD47EF /* travel.jpg in Resources */,
 				A02BA93F23B754A700FB3256 /* correct.mp3 in Resources */,
+				A0344E3823CC4B94002FA68A /* GoogleService-Info.plist in Resources */,
 				A03EFB3B23B5F8450071E09D /* ls1_grape_fruit.jpg in Resources */,
 				A02B9B5823BF209900EBCC34 /* unit_2.jpg in Resources */,
 				A02C4CCD23C6E77B00CD47EF /* Lesson_3_2 in Resources */,
@@ -612,6 +626,7 @@
 				A06A481123C5B3C6004EBA27 /* Unit_2 in Resources */,
 				A02C4CC623C6E32B00CD47EF /* activities.jpg in Resources */,
 				A03EFB3A23B5F8450071E09D /* ls1_kale.jpg in Resources */,
+				A0344E3623CC214A002FA68A /* Lesson_1_6 in Resources */,
 				A06A47FC23C59543004EBA27 /* play.jpg in Resources */,
 				A02C4CC923C6E4E900CD47EF /* Unit_3 in Resources */,
 				A02B9B5D23BF5B6700EBCC34 /* coverProfile.png in Resources */,
@@ -620,6 +635,7 @@
 				A02C4CBC23C6E1C900CD47EF /* bike.jpg in Resources */,
 				A0F647D423C49BE500EDE18B /* Lesson_1_3 in Resources */,
 				A06A480123C59543004EBA27 /* build.jpg in Resources */,
+				A0344E3423CC1EFC002FA68A /* Lesson_1_5 in Resources */,
 				A06A480723C597E7004EBA27 /* Lesson_2_2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,12 +689,18 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-English_3/Pods-English_3-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -932,14 +954,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = JXYC667V8M;
+				DEVELOPMENT_TEAM = T52DMNDUT3;
 				INFOPLIST_FILE = English_3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Mihozil.English;
+				PRODUCT_BUNDLE_IDENTIFIER = Mihozil.EasyEnglish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "English_3/English_3-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -956,14 +978,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = JXYC667V8M;
+				DEVELOPMENT_TEAM = T52DMNDUT3;
 				INFOPLIST_FILE = English_3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Mihozil.English;
+				PRODUCT_BUNDLE_IDENTIFIER = Mihozil.EasyEnglish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "English_3/English_3-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

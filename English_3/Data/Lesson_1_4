@@ -1,0 +1,101 @@
+{
+	"lessonid" : "1",
+	"questions"  : [
+		{
+			"idx" : "0",
+			"type" : "1", 
+			"texts":["Lotus is a beautiful flower"],
+			"thumbs": ["ls1_lotus.jpg","ls1_peach.jpg","ls1_kale.jpg","ls1_grape_fruit.jpg"],
+			"answer":"0",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "1",
+			"type" : "1", 
+			"texts":["Peach blossom in spring"],
+			"thumbs": ["ls1_lotus.jpg","ls1_peach.jpg","ls1_kale.jpg","ls1_grape_fruit.jpg"],
+			"answer":"1",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "2",
+			"type" : "1", 
+			"texts":["Kale flower is yellow"],
+			"thumbs": ["ls1_lotus.jpg","ls1_peach.jpg","ls1_kale.jpg","ls1_grape_fruit.jpg"],
+			"answer":"2",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "3",
+			"type" : "1", 
+			"texts":["Grape fruit flower smells great"],
+			"thumbs": ["ls1_lotus.jpg","ls1_peach.jpg","ls1_kale.jpg","ls1_grape_fruit.jpg"],
+			"answer":"3",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "4",
+			"type" : "4", 
+			"texts":["Ltuso","Lotus"],
+			"thumbs": ["ls1_lotus.jpg"],
+			"answer":"0",
+             "tip" : "Rearrangement"
+		},
+		{
+			"idx" : "5",
+			"type" : "4", 
+			"texts":["Pchae","Peach"],
+			"thumbs": ["ls1_peach.jpg"],
+			"answer":"0",
+            "tip" : "Rearrangement"
+		},
+		{
+			"idx" : "6",
+			"type" : "4", 
+			"texts":["eKal","Kale"],
+			"thumbs": ["ls1_kale.jpg"],
+			"answer" :"0",
+            "tip" : "Rearrangement"
+		},
+		{
+			"idx" : "7",
+			"type" : "4", 
+			"texts":["Garep Fruit", "Grape Fruit"],
+			"thumbs": ["ls1_grape_fruit.jpg"],
+			"answer" :"0",
+            "tip" : "Rearrangement"
+		},
+		{
+			"idx" : "8",
+			"type" : "3", 
+			"texts":["Lotus is a beautiful flower","Peach blossoms in spring","Kale flower is yellow","Grape fruit flower smells great"],
+			"thumbs": ["ls1_lotus.jpg"],
+			"answer" :"0",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "9",
+			"type" : "3", 
+			"texts":["Lotus is a beautiful flower","Peach blossom in spring","Kale flower is yellow","Grape fruit flower smells great"],
+			"thumbs": ["ls1_peach.jpg"],
+			"answer" :"1",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "10",
+			"type" : "3", 
+			"texts":["Lotus is a beautiful flower","Peach blossom in spring","Kale flower is yellow","Grape fruit flower smells great"],
+			"thumbs": ["ls1_kale.jpg.jpg"],
+			"answer" :"2",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "11",
+			"type" : "3", 
+			"texts":["Lotus is a beautiful flower","Peach blossom in spring","Kale flower is yellow","Grape fruit flower smells great"],
+			"thumbs": ["ls1_grape_fruit.jpg"],
+			"answer" :"3",
+            "tip" : "Touch the true sentence of the photo"
+		}
+	]
+}

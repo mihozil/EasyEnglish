@@ -39,6 +39,18 @@ class LessonCollectionCell : UICollectionViewCell {
         return _progressView
     }()
     
+    var reviewLabel : UILabel = {
+        let label = UILabel.init()
+        label.backgroundColor = UIColor.black.withAlphaComponent(0.35)
+        label.textColor = UIColor(red: 0.88, green: 0.88, blue: 0.88, alpha: 1.0);
+        label.font = UIFont.systemFont(ofSize: 11, weight: UIFont.Weight.medium)
+        label.text = "Revision"
+        label.textAlignment = NSTextAlignment.center
+        label.layer.cornerRadius = 1.0;
+        label.layer.masksToBounds = true
+        return label
+    }()
+    
     var progressImageView : UIImageView = {
         let imageView = UIImageView.init()
         imageView.image = UIImage.init(named: "tick")
@@ -54,6 +66,7 @@ class LessonCollectionCell : UICollectionViewCell {
         self.contentView.addSubview(descriptionLabel)
         self.contentView.addSubview(progressView)
         self.contentView.addSubview(progressImageView)
+        self.contentView.addSubview(self.reviewLabel)
         
         thumbImgView.contentMode = UIView.ContentMode.scaleAspectFit
         thumbImgView.contentMode = UIView.ContentMode.scaleAspectFit
@@ -78,6 +91,12 @@ class LessonCollectionCell : UICollectionViewCell {
         self.progressView.frame = CGRect.init(x: Double(self.contentView.width)-24-20, y: y, width: 24, height: 24)
         self.progressImageView.frame = self.progressView.frame.inset(by: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
         
+        self.reviewLabel.sizeToFit()
+        self.reviewLabel.width += 3
+        self.reviewLabel.height += 3
+        self.reviewLabel.right = self.thumbImgView.right - 2
+        self.reviewLabel.top = self.thumbImgView.top + 2
+        
     }
     
     var lesson: LessonModel? {
@@ -100,6 +119,11 @@ class LessonCollectionCell : UICollectionViewCell {
                 self.progressView.isHidden = true
             }
             
+            if self.lesson!.isReview {
+                self.reviewLabel.isHidden = false
+            } else {
+                self.reviewLabel.isHidden = true
+            }
             
         }
     }
@@ -112,6 +136,7 @@ class LessonModel  {
     var lessonId : Int
     var toQuestion : Int
     var totalQuestion : Int
+    var isReview : Bool
     
     init(lessonId: Int, thumb: String, title: String, detail: String, totalQuestion: Int) {
         self.lessonId = lessonId
@@ -120,6 +145,8 @@ class LessonModel  {
         self.detail = detail
         self.toQuestion = 0
         self.totalQuestion = totalQuestion
+        
+        self.isReview = false
     }
     
     

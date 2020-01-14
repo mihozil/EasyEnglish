@@ -1,0 +1,101 @@
+{
+	"lessonid" : "1",
+	"questions"  : [
+		{
+			"idx" : "0",
+			"type" : "1", 
+			"texts":["Kale is nutritious"],
+			"thumbs": ["kaleVegetable.jpg","cucumber.jpg","cabage.jpg","onion.jpg"],
+			"answer":"0",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "1",
+			"type" : "1", 
+			"texts":["Cucumber is popular in daily meals"],
+			"thumbs": ["kaleVegetable.jpg","cucumber.jpg","cabage.jpg","onion.jpg"],
+			"answer":"1",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "2",
+			"type" : "1", 
+			"texts":["Cabbage is the main ingredient of kimchi"],
+			"thumbs": ["kaleVegetable.jpg","cucumber.jpg","cabage.jpg","onion.jpg"],
+			"answer":"2",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "3",
+			"type" : "1", 
+			"texts":["Onion is mainly use as spices"],
+			"thumbs": ["kaleVegetable.jpg","cucumber.jpg","cabage.jpg","onion.jpg"],
+			"answer":"3",
+            "tip" : "Touch the true photo"
+		},
+		{
+			"idx" : "4",
+			"type" : "4",
+			"texts":["leaK","Kale"],
+			"thumbs": ["kaleVegetable.jpg"],
+			"answer":"0",
+             "tip" : "Rearragjngement"
+		},
+		{
+			"idx" : "5",
+			"type" : "4",
+			"texts":["Cucberum","Cucumber"],
+			"thumbs": ["cucumber.jpg"],
+			"answer":"0",
+            "tip" : "Rearrangement"
+		},
+		{
+			"idx" : "6",
+			"type" : "4",
+			"texts":["Cabageb","Cabbage"],
+			"thumbs": ["cabage.jpg"],
+			"answer" :"0",
+            "tip" : "Rearrangment"
+		},
+		{
+			"idx" : "7",
+			"type" : "4", 
+			"texts":["Ononi","Onion"],
+			"thumbs": ["onion.jpg"],
+			"answer" :"0",
+            "tip" : "Rearrangement"
+		},
+		{
+			"idx" : "8",
+			"type" : "3", 
+			"texts":["Kale is nutritious","Cucumber is popular in daily meals","Cabbage is the main ingredient of kimchi","Onion is a kind of spices"],
+			"thumbs": ["kaleVegetable.jpg"],
+			"answer" :"0",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "9",
+			"type" : "3", 
+			"texts":["Kale is nutritious","Cucumber is popular in daily meals","Cabbage is the main ingredient of kimchi","Onion is a kind of spices"],
+			"thumbs": ["cucumber.jpg"],
+			"answer" :"1",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "10",
+			"type" : "3", 
+			"texts":["Kale is nutritious","Cucumber is popular in daily meals","Cabbage is the main ingredient of kimchi","Onion is a kind of spices"],
+			"thumbs": ["cabage.jpg"],
+			"answer" :"2",
+            "tip" : "Touch the true sentence of the photo"
+		},
+		{
+			"idx" : "11",
+			"type" : "3", 
+			"texts":["Kale is nutritious","Cucumber is popular in daily meals","Cabbage is the main ingredient of kimchi","Onion is a kind of spices"],
+			"thumbs": ["onion.jpg"],
+			"answer" :"3",
+            "tip" : "Touch the true sentence of the photo"
+		}
+	]
+}

@@ -1,0 +1,101 @@
+{
+    "lessonid" : "1",
+    "questions"  : [
+        {
+            "idx" : "0",
+            "type" : "1",
+            "texts":["Orange is a healthy fruit"],
+            "thumbs": ["orange.jpg","apple.jpg","banana.jpg","mango.jpg"],
+            "answer":"0",
+            "tip" : "Touch the true photo"
+        },
+        {
+            "idx" : "1",
+            "type" : "1",
+            "texts":["Apple is a good source of Vitamin C"],
+            "thumbs": ["orange.jpg","apple.jpg","banana.jpg","mango.jpg"],
+            "answer":"1",
+            "tip" : "Touch the true photo"
+        },
+        {
+            "idx" : "2",
+            "type" : "1",
+            "texts":["Banana is the favorite food of monkey"],
+            "thumbs": ["orange.jpg","apple.jpg","banana.jpg","mango.jpg"],
+            "answer":"2",
+            "tip" : "Touch the true photo"
+        },
+        {
+            "idx" : "3",
+            "type" : "1",
+            "texts":["Mango is so sweet"],
+            "thumbs": ["orange.jpg","apple.jpg","banana.jpg","mango.jpg"],
+            "answer":"3",
+            "tip" : "Touch the true photo"
+        },
+        {
+            "idx" : "4",
+            "type" : "4",
+            "texts":["Oragne","Orange"],
+            "thumbs": ["orange.jpg"],
+            "answer":"0",
+             "tip" : "Rearrangement"
+        },
+        {
+            "idx" : "5",
+            "type" : "4",
+            "texts":["Appel","Apple"],
+            "thumbs": ["apple.jpg"],
+            "answer":"0",
+            "tip" : "Rearrangement"
+        },
+        {
+            "idx" : "6",
+            "type" : "4",
+            "texts":["Baanan","Banana"],
+            "thumbs": ["banana.jpg"],
+            "answer" :"0",
+            "tip" : "Rearrangement"
+        },
+        {
+            "idx" : "7",
+            "type" : "4",
+            "texts":["Magno", "Mango"],
+            "thumbs": ["mango.jpg"],
+            "answer" :"0",
+            "tip" : "Rearrangement"
+        },
+        {
+            "idx" : "8",
+            "type" : "3",
+            "texts":["Orange is a healthy fruit","Apple is a good source of Vitamin C","Banana is the favorite food of monkey","Mango is so sweet"],
+            "thumbs": ["orange.jpg"],
+            "answer" :"0",
+            "tip" : "Touch the true sentence of the photo"
+        },
+        {
+            "idx" : "9",
+            "type" : "3",
+            "texts":["Orange is a healthy fruit","Apple is a good source of Vitamin C","Banana is the favorite food of monkey","Mango is so sweet"],
+            "thumbs": ["apple.jpg"],
+            "answer" :"1",
+            "tip" : "Touch the true sentence of the photo"
+        },
+        {
+            "idx" : "10",
+            "type" : "3",
+            "texts":["Orange is a healthy fruit","Apple is a good source of Vitamin C","Banana is the favorite food of monkey","Mango is so sweet"],
+            "thumbs": ["banana.jpg"],
+            "answer" :"2",
+            "tip" : "Touch the true sentence of the photo"
+        },
+        {
+            "idx" : "11",
+            "type" : "3",
+            "texts":["Orange is a healthy fruit","Apple is a good source of Vitamin C","Banana is the favorite food of monkey","Mango is so sweet"],
+            "thumbs": ["mango.jpg"],
+            "answer" :"3",
+            "tip" : "Touch the true sentence of the photo"
+        }
+    ]
+}

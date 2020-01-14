@@ -12,6 +12,15 @@ class QuestionCollectionViewCell : UICollectionViewCell {
     var question : QuestionModel?
     var didAnswerCorrect : (()->Void)?
     var didAnswerWrong : (()->Void)?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.contentView.backgroundColor = UIColor.init(red: 0.0, green: 0.9, blue: 0.9, alpha: 0.06)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 class MultiSelectQuestionCollectionViewCell : QuestionCollectionViewCell {
@@ -249,4 +258,243 @@ class MultiSelectSecondTypeCollectionViewCell : QuestionCollectionViewCell {
     }
 
 
+}
+
+protocol RearrangeViewProtocol {
+    func didSelectButton(button: UIButton)
+}
+
+class RearrangementQuestionCollectionViewCell : QuestionCollectionViewCell, RearrangeViewProtocol {
+    static let identifier = "RearrangementQuestionCollectionViewCell"
+    
+    let toFillView : RearrangeView
+    let initialView : RearrangeView
+    let thumbImageView : UIImageView = {
+        let imageView = UIImageView.init()
+        imageView.contentMode = UIView.ContentMode.scaleAspectFit
+        return imageView
+    }()
+    let resetButton : UIButton = {
+        let button = UIButton.init()
+        button.setTitle("Reset", for: UIControl.State.normal)
+//        button.layer.borderColor = UIColor.black.withAlphaComponent(0.15).cgColor
+//        button.layer.borderWidth = 1.0
+        button.layer.cornerRadius = 3.0
+        button.layer.masksToBounds = true
+        button.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+        button.setTitleColor(UIColor(red: 0, green: 0.5, blue: 1, alpha: 1.0), for: UIControl.State.normal)
+        
+        return button
+    }()
+    
+    override init(frame: CGRect) {
+        
+        toFillView = RearrangeView.init(type: RearrangeViewType.TypeToFill)
+        initialView = RearrangeView.init(type: RearrangeViewType.TypeInitial)
+        
+        super.init(frame: frame)
+        
+        
+        toFillView.rearrangeCell = self
+        initialView.rearrangeCell = self
+        resetButton.addTarget(self, action: #selector(resetAllCharacter), for: UIControl.Event.touchUpInside)
+        
+        self.contentView.addSubview(initialView)
+        self.contentView.addSubview(toFillView)
+        self.contentView.addSubview(thumbImageView)
+        self.contentView.addSubview(resetButton)
+    }
+    
+    override func prepareForReuse() {
+        if toFillView.addedCharacters.count > 0 {
+            self.resetAllCharacter()
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    var trueText : String?
+    override var question : QuestionModel? {
+        didSet {
+            let arrangedText = self.question?.texts[0]
+            self.trueText = self.question?.texts[1]
+            initialView.text = arrangedText
+            toFillView.text = self.trueText
+            let thumbText = self.question?.thumbs[0]
+            let thumb = UIImage(named: thumbText!)
+            self.thumbImageView.image = thumb
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let x = 10.0
+        var y = 10.0
+        self.toFillView.frame = CGRect(x: x, y: y, width: Double(self.contentView.width-20), height: 44)
+        y += (20+Double(self.toFillView.height))
+        self.initialView.frame = CGRect(x: x, y: y, width: Double(self.contentView.width-20), height: 44)
+        y += (10+Double(self.initialView.height))
+        
+        self.resetButton.frame = CGRect(x: Double(self.width)-70, y: y, width: 60, height: 30)
+        y += Double(resetButton.height + 10)
+        
+        self.thumbImageView.frame = CGRect(x: x, y: y, width: Double(self.contentView.width-20), height: Double(self.contentView.height)-y-10)
+    }
+    
+    func didSelectButton(button: UIButton) {
+        if self.toFillView.subviews.contains(button) {
+            return;
+        }
+        self.moveViewFromInitialToArrange(view: button)
+        self.toFillView.addedCharacters.append(button.titleLabel!.text!)
+        
+        if self.toFillView.addedCharacters.count == self.toFillView.text?.count {
+            if self.toFillView.addedCharacters == self.toFillView.text {
+                ToastView.showTrueAnswerToastForView(view: self.toFillView, completionHandler: {
+                    UserManager.shared.questionViewController?.gotoNextQuestion(currentQuestion: self.question!.idx)
+                })
+                SpeechService.shared.playFileName(name: "correct.mp3")
+                if let handler = self.didAnswerCorrect {
+                    handler()
+                }
+            } else {
+                ToastView.showFalseAnswerToastForView(view: self.toFillView)
+                SpeechService.shared.playFileName(name: "wrong.mp3")
+            }
+        }
+    }
+    
+    func moveViewFromInitialToArrange(view : UIView) {
+        let newRectInArrangedView = self.toFillView.boundForCharacterAtIndex(index: self.toFillView.addedCharacters.count, textCount: self.trueText!.count)
+        self.moveView(view: view, fromSuper: self.initialView, toSuper: self.toFillView, atRect: newRectInArrangedView)
+    }
+    
+    func moveView(view: UIView, fromSuper:UIView, toSuper:UIView, atRect:CGRect) {
+        view.removeFromSuperview()
+        
+        let preFrame = view.frame
+        view.frame = fromSuper.convert(preFrame, to: toSuper)
+        toSuper.addSubview(view)
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            view.frame = atRect
+        }, completion: { _ in
+            
+        })
+    }
+    
+    @objc func resetAllCharacter() {
+        self.toFillView.addedCharacters = ""
+        for button in self.initialView.buttonViews! {
+            if button.superview == self.initialView {
+            
+            } else {
+                self.moveView(view: button, fromSuper: self.toFillView, toSuper: self.initialView, atRect: self.initialView.boundForCharacterAtIndex(index: button.tag, textCount: self.initialView.text!.count))
+            }
+        }
+    }
+    
+}
+
+enum RearrangeViewType : Int {
+    case TypeToFill = 0
+    case TypeInitial = 1
+};
+
+class RearrangeView : UIView {
+    
+    weak var rearrangeCell : RearrangementQuestionCollectionViewCell?
+    let type : RearrangeViewType
+    init( type: RearrangeViewType) {
+        self.type = type
+    
+        super.init(frame: CGRect.zero)
+        
+        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = 1.0
+        self.layer.cornerRadius = 3.0
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var text : String? {
+        
+        didSet {
+            if self.type == RearrangeViewType.TypeInitial {
+                self.updateButtonFrameForText()
+            }
+        }
+    }
+    
+    override var frame: CGRect {
+        didSet {
+            if self.type == RearrangeViewType.TypeInitial {
+                self.updateButtonFrameForText()
+            }
+        }
+    }
+    
+    var buttonViews: Array<UIButton>?
+    
+    func updateButtonFrameForText() {
+        self.subviews.forEach { $0.removeFromSuperview() }
+        
+        if self.text == nil || self.frame == CGRect.zero {
+            return
+        }
+        
+        let buttonWidth = Double(self.width)/Double(self.text!.count)
+        var centerX = 0.0 + buttonWidth/2
+        let centerY = Double(self.height/2)
+        
+        var tag = 0
+        buttonViews = Array()
+        for ch in self.text! {
+            
+            let button = UIButton.init()
+            button.width = CGFloat(max(buttonWidth/2, 30))
+            button.height = max(self.height/2, 30)
+            button.center = CGPoint(x: centerX, y: centerY)
+            button.setTitle(String(ch), for: UIControl.State.normal)
+            self.addSubview(button)
+            button.addTarget(self, action: #selector(didSelectButton(button:)), for: .touchUpInside)
+            button.layer.borderColor = UIColor.lightGray.cgColor
+            button.layer.borderWidth = 1.0
+            button.layer.cornerRadius = 3.0
+            button.layer.masksToBounds = true
+            button.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.semibold)
+            button.setTitleColor(UIColor.darkText, for: UIControl.State.normal)
+            
+            
+            centerX += buttonWidth
+            
+            button.tag = tag
+            buttonViews?.append(button)
+            tag += 1
+            
+        }
+    }
+    
+    var addedCharacters : String  = ""
+    
+    func boundForCharacterAtIndex(index : Int, textCount:Int) -> CGRect {
+        let buttonWidth = Double(self.width)/Double(self.text!.count)
+        let width = Double(max(buttonWidth/2, 30))
+        let height =  Double(max(self.height/2, 30))
+        let centerX = Double(index)*buttonWidth + buttonWidth/2
+        let centerY = Double(self.height/2)
+        return CGRect(x: centerX-width/2, y: centerY-height/2, width: width, height: height)
+    }
+    
+    @objc func didSelectButton(button : UIButton) {
+        self.rearrangeCell?.didSelectButton(button: button)
+    }
+    
 }
