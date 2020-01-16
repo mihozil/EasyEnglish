@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,8 @@ var window: UIWindow?
 
             self.window?.rootViewController = nav
             self.window?.makeKeyAndVisible()
+            
+
         }
         
         

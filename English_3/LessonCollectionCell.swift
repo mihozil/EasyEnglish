@@ -102,7 +102,7 @@ class LessonCollectionCell : UICollectionViewCell {
     var lesson: LessonModel? {
         
         didSet {
-            thumbImgView.image = UIImage(named: self.lesson!.thumb);
+            self.thumbImgView.setFireBaseImageWithUrl(url: self.lesson!.thumb)
             
             titleLabel.text = self.lesson!.title
             descriptionLabel.text = self.lesson!.detail

@@ -66,7 +66,8 @@ class UnitCollectionViewCell : UICollectionViewCell {
     
     var model: UnitModel? {
         didSet {
-            self.thumbImageView.image = UIImage.init(named: self.model!.thumb)
+             self.thumbImageView.setFireBaseImageWithUrl(url:self.model!.thumb)
+            
             self.titleLabel.text = self.model?.title
             self.descriptionLabel.text = self.model?.desc
             if self.model!.totalFinished > 0 {

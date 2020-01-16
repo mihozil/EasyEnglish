@@ -7,12 +7,20 @@
 //
 
 import Foundation
+import Firebase
 
 class QuestionFlowManager {
     
     static let shared = QuestionFlowManager()
     
+    private init() {
+        FirebaseApp.configure()
+        self.storage = Storage.storage()
+    }
+    
     var currentUnitId : Int?
     var currentLessonId : Int?
+    
+    let storage : Storage
     
 }
