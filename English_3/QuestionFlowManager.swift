@@ -16,11 +16,17 @@ class QuestionFlowManager {
     private init() {
         FirebaseApp.configure()
         self.storage = Storage.storage()
+        ref = Database.database().reference()
+        
     }
     
     var currentUnitId : Int?
     var currentLessonId : Int?
     
     let storage : Storage
+    
+    var ref: DatabaseReference!
+
+    
     
 }

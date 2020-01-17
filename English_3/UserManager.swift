@@ -17,7 +17,10 @@ class UserManager : NSObject {
     var setting : SettingInfo? 
     
     func createUserWithName(name : String) {
-        user = UserInfo.init(userName: name, userId: "1")
+        let userId = String(format: "%ld", Date().timeIntervalSince1970)
+        user = UserInfo.init(userName: name, userId: userId)
+         QuestionFlowManager.shared.ref.child("/Users").child(userId).child("name").setValue(name)
+               QuestionFlowManager.shared.ref.child("/Users").child(userId).child("id").setValue(userId)
     }
     
     func loadDataWhenAppstart() {
@@ -29,7 +32,7 @@ class UserManager : NSObject {
         } else {
             self.setting = SettingInfo.init()
         }
-        
+       
     }
     func updateDataWhenAppKilled() {
         do {

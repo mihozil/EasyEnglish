@@ -19,6 +19,23 @@ extension UIImageView {
             }
         })
     }
+    
+    
+    func setFireBaseImageWithUrl(url: String, placeHolder: UIImage?) {
+        if let placeHolder = placeHolder {
+            self.image = placeHolder
+        } else {
+            self.image = UIImage(named: "placeholder.png")
+        }
+        
+        FirebaseDownloadManager.shared.downloadImageForUrl(url: url, completion: {
+            image, error in
+            if let image = image {
+                self.image = image
+                self.backgroundColor = UIColor.clear
+            }
+        })
+    }
 }
 
 class FirebaseDownloadManager {

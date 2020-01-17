@@ -9,6 +9,8 @@ target 'English_3' do
 
 pod 'AFNetworking'
 pod 'Firebase/Storage'
+pod 'Firebase/Analytics'
+pod 'Firebase/Database'
 
   target 'English_3Tests' do
     inherit! :search_paths

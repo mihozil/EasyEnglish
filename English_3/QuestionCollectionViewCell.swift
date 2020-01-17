@@ -43,7 +43,7 @@ class MultiSelectQuestionCollectionViewCell : QuestionCollectionViewCell {
                 let answerView = answers![i]
                 answerView.isHidden = false
 
-                answerView.setFireBaseImageWithUrl(url: thumb)
+                answerView.setFireBaseImageWithUrl(url: thumb, placeHolder: nil)
             }
         }
     }
@@ -140,7 +140,7 @@ class ListenSpeakQuestionCollectionViewCell : QuestionCollectionViewCell {
         didSet {
             self.questionLabel.text = self.question?.texts[0]
 
-            self.thumbImageView.setFireBaseImageWithUrl(url: (self.question?.thumbs[0])!)
+            self.thumbImageView.setFireBaseImageWithUrl(url: (self.question?.thumbs[0])!, placeHolder: nil)
         }
     }
 
@@ -199,7 +199,7 @@ class MultiSelectSecondTypeCollectionViewCell : QuestionCollectionViewCell {
     override var question : QuestionModel? {
         didSet {
  
-            self.thumbImgView.setFireBaseImageWithUrl(url: (self.question?.thumbs[0])!)
+            self.thumbImgView.setFireBaseImageWithUrl(url: (self.question?.thumbs[0])!, placeHolder: nil)
 
             let choices : Array<String> = self.question!.texts
             var t : Int = 0
@@ -327,7 +327,7 @@ class RearrangementQuestionCollectionViewCell : QuestionCollectionViewCell, Rear
             initialView.text = arrangedText
             toFillView.text = self.trueText
             
-             self.thumbImageView.setFireBaseImageWithUrl(url: (self.question?.thumbs[0])!)
+             self.thumbImageView.setFireBaseImageWithUrl(url: (self.question?.thumbs[0])!, placeHolder: nil)
         }
     }
     

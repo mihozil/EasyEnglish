@@ -38,6 +38,7 @@
 		A02C4CCD23C6E77B00CD47EF /* Lesson_3_2 in Resources */ = {isa = PBXBuildFile; fileRef = A02C4CCC23C6E77B00CD47EF /* Lesson_3_2 */; };
 		A02C4CCF23C6E89500CD47EF /* Lesson_3_3 in Resources */ = {isa = PBXBuildFile; fileRef = A02C4CCE23C6E89500CD47EF /* Lesson_3_3 */; };
 		A02CF5AA23CEB9BD00F6F4E2 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02CF5A923CEB9BD00F6F4E2 /* DownloadManager.swift */; };
+		A02DE47923D068E500E9E8EA /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = A02DE47823D068E500E9E8EA /* placeholder.png */; };
 		A02EB9B123C86B46008E4341 /* Lesson_1_4 in Resources */ = {isa = PBXBuildFile; fileRef = A02EB9B023C86B46008E4341 /* Lesson_1_4 */; };
 		A02F7EC223AB3446004FA6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F7EC123AB3446004FA6B7 /* AppDelegate.swift */; };
 		A02F7EC423AB3446004FA6B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F7EC323AB3446004FA6B7 /* SceneDelegate.swift */; };
@@ -161,6 +162,7 @@
 		A02C4CCC23C6E77B00CD47EF /* Lesson_3_2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lesson_3_2; sourceTree = "<group>"; };
 		A02C4CCE23C6E89500CD47EF /* Lesson_3_3 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lesson_3_3; sourceTree = "<group>"; };
 		A02CF5A923CEB9BD00F6F4E2 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		A02DE47823D068E500E9E8EA /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		A02EB9B023C86B46008E4341 /* Lesson_1_4 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lesson_1_4; sourceTree = "<group>"; };
 		A02F7EBE23AB3446004FA6B7 /* English_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = English_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02F7EC123AB3446004FA6B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 		A03EFB3523B5F82E0071E09D /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				A02DE47823D068E500E9E8EA /* placeholder.png */,
 				A02C4CC323C6E32B00CD47EF /* activities.jpg */,
 				A02C4CC423C6E32B00CD47EF /* preperation.jpg */,
 				A02C4CC223C6E32B00CD47EF /* travel.jpg */,
@@ -582,6 +585,7 @@
 				A0F647D123C4965E00EDE18B /* cucumber.jpg in Resources */,
 				A03EFB3423B5E94D0071E09D /* Unit_1 in Resources */,
 				A06A480523C596AF004EBA27 /* Lesson_2_1 in Resources */,
+				A02DE47923D068E500E9E8EA /* placeholder.png in Resources */,
 				A0F647C723C4930F00EDE18B /* mango.jpg in Resources */,
 				A0F647C623C4930F00EDE18B /* banana.jpg in Resources */,
 				A06A480323C59543004EBA27 /* sleep.jpg in Resources */,
@@ -694,6 +698,8 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -703,6 +709,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
