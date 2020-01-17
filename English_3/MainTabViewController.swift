@@ -44,7 +44,7 @@ class CustomCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
 class HomeViewController : UIViewController {
     var collectionView: UICollectionView?
-    var units : Array<UnitModel>?
+    var units : Array<UnitModel> = []
     let collectionLayout = CustomCollectionViewFlowLayout.init()
     
     var topbar : UIView?
@@ -62,9 +62,12 @@ class HomeViewController : UIViewController {
         collectionView?.delegate = self
         self.view.addSubview(collectionView!)
         
-        self.units = DataManager.fetchAllUnits()
+        DataManager.fetchAllUnitFirebase(completion: {
+            units in
+            self.units = units
+            self.collectionView?.reloadData()
+        })
         self.updateProgressForUnits(reloadData: false)
-        
         self.addTopbar()
         
     }
@@ -116,7 +119,7 @@ class HomeViewController : UIViewController {
     }
     
     func updateProgressForUnits(reloadData: Bool) {
-        for unit in self.units! {
+        for unit in self.units {
             if let totalFinished = UserManager.shared.user?.getUnitTotalFinished(unitId: unit.unitId) {
                 unit.totalFinished = totalFinished
             }
@@ -135,11 +138,11 @@ extension HomeViewController : UICollectionViewDataSource {
          return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.units!.count
+        return self.units.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UnitCollectionViewCell.identifier, for: indexPath) as! UnitCollectionViewCell
-        let model = self.units![indexPath.item]
+        let model = self.units[indexPath.item]
         cell.model = model
         cell.setNeedsLayout()
         return cell
@@ -148,7 +151,7 @@ extension HomeViewController : UICollectionViewDataSource {
 
 extension HomeViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let unit = self.units![indexPath.item]
+        let unit = self.units[indexPath.item]
         let lessonVC = LessonViewController.init()
         lessonVC.title = unit.title
         lessonVC.unitId = unit.unitId

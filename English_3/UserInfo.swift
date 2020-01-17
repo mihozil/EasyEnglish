@@ -20,6 +20,9 @@ class UserInfo : NSObject, NSCoding {
         self.userId = userId
         self.learningProgress = Dictionary.init()
         super.init()
+        
+       
+        
     }
     
     required init?(coder: NSCoder) {
@@ -29,6 +32,7 @@ class UserInfo : NSObject, NSCoding {
         if self.learningProgress == nil {
             self.learningProgress = Dictionary.init()
         }
+        
     }
     
     func encode(with coder: NSCoder) {

@@ -26,7 +26,8 @@ class QuestionFlowManager {
     let storage : Storage
     
     var ref: DatabaseReference!
-
+    
+    var cacheData = NSMutableDictionary.init()
     
     
 }

@@ -12,7 +12,7 @@ import UIKit
 // q2 :
 // q3 :
 
-class MultiSelectionQuestionsViewController: UIViewController {
+class QuestionsViewController: UIViewController {
     
     var functionalBar : UIView?
     var titleLabel : UILabel?
@@ -22,6 +22,9 @@ class MultiSelectionQuestionsViewController: UIViewController {
     var lesson : LessonModel?
     var bottomBar : UIView?
     var viewDidAppearOnce = false
+    
+    var didSpeakPage = -1
+    var collectionScrolling = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +41,7 @@ class MultiSelectionQuestionsViewController: UIViewController {
         collectionViewLayout.scrollDirection = .horizontal
         collectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: 64, width: screenSize.width, height: screenSize.height-64), collectionViewLayout: collectionViewLayout)
         collectionView?.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
-        collectionView?.backgroundColor = UIColor.clear
+        collectionView?.backgroundColor = UIColor.init(red: 0.0, green: 0.9, blue: 0.9, alpha: 0.06)
         collectionView?.isScrollEnabled = false
         collectionView?.showsHorizontalScrollIndicator = false
         collectionView?.register(MultiSelectQuestionCollectionViewCell.self, forCellWithReuseIdentifier: MultiSelectQuestionCollectionViewCell.identifier)
@@ -52,8 +55,6 @@ class MultiSelectionQuestionsViewController: UIViewController {
         collectionView?.delegate = self
         
         self.title = lesson!.title
-        let toQuestion = lesson!.toQuestion%questions.count
-        collectionView?.scrollToItem(at: IndexPath(item: toQuestion, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: false)
         
         initializeFunctionalBar()
         initializeBottomBar()
@@ -61,6 +62,16 @@ class MultiSelectionQuestionsViewController: UIViewController {
         UserManager.shared.questionViewController = self
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        DataManager.fetchLessonWithFirebase(lessonId: self.lesson!.lessonId, unitId: QuestionFlowManager.shared.currentUnitId!, completion: {
+            questionModels in
+            self.questions = questionModels
+   
+            let toQuestion = self.lesson!.toQuestion%self.questions.count
+            self.collectionView?.reloadData()
+            self.collectionView?.scrollToItem(at: IndexPath(item: toQuestion, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: false)
+            self.progressView?.setProgressWithAnimation(duration: 0.0, value: Float(toQuestion+1)/Float(self.questions.count))
+        })
     }
     
     
@@ -90,8 +101,7 @@ class MultiSelectionQuestionsViewController: UIViewController {
         self.progressView?.frame = CGRect.init(x: functionalBar!.right-(35+20), y: 30, width: 24, height: 24)
         self.progressView?.trackClr = UIColor.lightGray
         self.progressView?.progressClr = UIColor.cyan
-        let toQuestion = lesson!.toQuestion%questions.count
-        self.progressView?.setProgressWithAnimation(duration: 0.0, value: Float(toQuestion+1)/Float(self.questions.count))
+        
         functionalBar?.addSubview(self.progressView!)
         
     }
@@ -176,8 +186,6 @@ class MultiSelectionQuestionsViewController: UIViewController {
         super.viewDidAppear(animated)
         if !viewDidAppearOnce {
             viewDidAppearOnce = true
-            let toQuestion = lesson!.toQuestion%questions.count
-            self.speakSenntenceAtPage(page: toQuestion)
         }
     }
     
@@ -186,10 +194,17 @@ class MultiSelectionQuestionsViewController: UIViewController {
         SpeechService.shared.cancelSpeaking()
     }
     
+   var didAskScrollToPage = 0
+    
     public func gotoNextQuestion(currentQuestion : Int) {
+        
         let goBlock = {
+
             if currentQuestion < self.questions.count - 1 {
-                self.collectionView?.scrollToItem(at: IndexPath.init(item: currentQuestion+1, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
+                if currentQuestion+1>self.didAskScrollToPage {
+                    self.didAskScrollToPage = currentQuestion+1
+                    self.collectionView?.scrollToItem(at: IndexPath.init(item: self.didAskScrollToPage, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
+                }
             } else {
                 if let nav = self.parent as? UINavigationController {
                     let lessonIdx = nav.viewControllers.count-2
@@ -226,7 +241,7 @@ class MultiSelectionQuestionsViewController: UIViewController {
 
 }
 
-extension MultiSelectionQuestionsViewController: UICollectionViewDataSource {
+extension QuestionsViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -259,14 +274,20 @@ extension MultiSelectionQuestionsViewController: UICollectionViewDataSource {
         cell.question = question
         cell.didAnswerCorrect = {
             
+            SpeechService.shared.playFileName(name: "correct.mp3")
             UserManager.shared.user?.updateLearningProgress(unitId: QuestionFlowManager.shared.currentUnitId!, lessonId: QuestionFlowManager.shared.currentLessonId!, toQuestion: question.idx+1)
+            
+        }
+        
+        cell.didAnswerWrong = {
+            SpeechService.shared.playFileName(name: "wrong.mp3")
         }
         
         return cell
     }
 }
 
-extension MultiSelectionQuestionsViewController : UICollectionViewDelegate {
+extension QuestionsViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
@@ -274,12 +295,21 @@ extension MultiSelectionQuestionsViewController : UICollectionViewDelegate {
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         let left = scrollView.contentOffset.x
         let page = Int(floor(left/scrollView.width))
-        self.progressView?.setProgressWithAnimation(duration: 0.1, value: Float(page+1)/Float(self.questions.count))
         
-        self.speakSenntenceAtPage(page: page)
+        if didSpeakPage < page {
+            self.progressView?.setProgressWithAnimation(duration: 0.1, value: Float(page+1)/Float(self.questions.count))
+                   
+            self.speakSenntenceAtPage(page: page)
+        }
+        collectionScrolling = true
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        collectionScrolling = false
     }
     
     func speakSenntenceAtPage(page : Int) {
+        didSpeakPage = page
         let question = self.questions[page]
         if question.type==1 || question.type == 2 {
             SpeechService.shared.speak(text:question.texts[0], completion: {})

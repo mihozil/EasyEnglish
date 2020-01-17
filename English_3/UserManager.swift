@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class UserManager : NSObject {
     static let shared = UserManager()
-    weak var questionViewController : MultiSelectionQuestionsViewController?
+    weak var questionViewController : QuestionsViewController?
     
     let defaults = UserDefaults.standard
     var user : UserInfo?
@@ -32,6 +32,26 @@ class UserManager : NSObject {
         } else {
             self.setting = SettingInfo.init()
         }
+        
+        // minhnht noted : get learning Progress from serve
+//        QuestionFlowManager.shared.ref.child("Users").child(self.user!.userId).child("progress").observeSingleEvent(of: .value, with: { (snapshot) in
+//                 // Get user value
+//                   if let value = snapshot.value as? String {
+//                    print("check:: ",value)
+//                       if let data = value.data(using: String.Encoding.utf8) {
+//                           do {
+//                               let json = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+//
+//                            self.user!.learningProgress = json as! LearningProgress
+//                           } catch  {
+//                               print("things went wrong, contact Minh Nguye")
+//                           }
+//                       }
+//                   }
+//                 // ...
+//                 }) { (error) in
+//                   print(error.localizedDescription)
+//               }
        
     }
     func updateDataWhenAppKilled() {
@@ -44,6 +64,10 @@ class UserManager : NSObject {
             let settingData = try NSKeyedArchiver.archivedData(withRootObject: self.setting!, requiringSecureCoding: false)
             self.defaults.removeObject(forKey: "settingInfo")
             self.defaults.set(settingData, forKey: "settingInfo")
+            
+            let jsonData = try! JSONSerialization.data(withJSONObject: self.user?.learningProgress as Any, options: [])
+            let jsonStr = String(data: jsonData, encoding: .utf8)
+        QuestionFlowManager.shared.ref.child("/Users").child(self.user!.userId).child("progress").setValue(jsonStr)
             
         } catch {
             print("contact minh nguyen immediately")

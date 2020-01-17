@@ -69,9 +69,26 @@ class FirebaseDownloadManager {
         
     }
     
+    func downloadDataForUrl(url: String, completion:@escaping DownloadDataCompletion) {
+        serialQueue.async {
+            let storageRef = QuestionFlowManager.shared.storage.reference()
+            let ref = storageRef.child("Data").child(url)
+            ref.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+              completion(nil, error)
+            } else {
+              // Data for "images/island.jpg" is returned
+                completion(data,nil)
+            }
+                   
+            }       
+        }
+    
+    }
 }
 
 typealias DownloadPhotoCompletion = (UIImage?,Error?) -> ()
+typealias DownloadDataCompletion = (Data?, Error?) -> ()
 
 class Downloader {
     var downloadingDic = Dictionary<String, Array<DownloadPhotoCompletion>>.init()

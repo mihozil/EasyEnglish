@@ -15,7 +15,6 @@ class QuestionCollectionViewCell : UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.contentView.backgroundColor = UIColor.init(red: 0.0, green: 0.9, blue: 0.9, alpha: 0.06)
     }
     
     required init?(coder: NSCoder) {
@@ -68,7 +67,6 @@ class MultiSelectQuestionCollectionViewCell : QuestionCollectionViewCell {
         self.contentView.addSubview(answer3)
         self.contentView.addSubview(answer4)
         self.contentView.addSubview(questionLabel)
-        self.contentView.backgroundColor = UIColor.init(red: 0.0, green: 0.9, blue: 0.9, alpha: 0.06)
     }
     
     func initialAnswerImageView(tag: Int) -> UIImageView {
@@ -90,7 +88,6 @@ class MultiSelectQuestionCollectionViewCell : QuestionCollectionViewCell {
             ToastView.showTrueAnswerToastForView(view: imageView, completionHandler: {
                 UserManager.shared.questionViewController?.gotoNextQuestion(currentQuestion: self.question!.idx)
             })
-            SpeechService.shared.playFileName(name: "correct.mp3")
             if let handler = self.didAnswerCorrect {
                 handler()
             }
@@ -98,7 +95,9 @@ class MultiSelectQuestionCollectionViewCell : QuestionCollectionViewCell {
         } else
         {
             ToastView.showFalseAnswerToastForView(view: imageView)
-            SpeechService.shared.playFileName(name: "wrong.mp3")
+            if let handler = self.didAnswerWrong {
+                handler()
+            }
         }
     }
     
@@ -149,7 +148,6 @@ class ListenSpeakQuestionCollectionViewCell : QuestionCollectionViewCell {
         super.init(frame: frame)
         self.contentView.addSubview(self.questionLabel)
         self.contentView.addSubview(self.thumbImageView)
-        self.contentView.backgroundColor = UIColor.init(red: 0.0, green: 0.9, blue: 0.9, alpha: 0.06)
 
         questionLabel.handleEvenSoundButton(event: UIControl.Event.touchUpInside, actionBlock: {
             SpeechService.shared.speak(text: self.question!.texts[0], completion: {
@@ -189,7 +187,6 @@ class MultiSelectSecondTypeCollectionViewCell : QuestionCollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentView.addSubview(thumbImgView)
-        self.contentView.backgroundColor = UIColor.init(red: 0.0, green: 0.9, blue: 0.9, alpha: 0.06)
     }
 
     required init?(coder: NSCoder) {
@@ -215,13 +212,16 @@ class MultiSelectSecondTypeCollectionViewCell : QuestionCollectionViewCell {
                             ToastView.showTrueAnswerToastForView(view: label!, completionHandler: {
                                 UserManager.shared.questionViewController?.gotoNextQuestion(currentQuestion: self.question!.idx)
                             })
-                            SpeechService.shared.playFileName(name: "correct.mp3")
+                    
                             if let handler = self.didAnswerCorrect {
                                 handler()
                             }
+                            
                         } else {
                             ToastView.showFalseAnswerToastForView(view: label!)
-                            SpeechService.shared.playFileName(name: "wrong.mp3")
+                            if let handler = self.didAnswerWrong {
+                                handler()
+                            }
                         }
                     })
 
@@ -359,13 +359,15 @@ class RearrangementQuestionCollectionViewCell : QuestionCollectionViewCell, Rear
                 ToastView.showTrueAnswerToastForView(view: self.toFillView, completionHandler: {
                     UserManager.shared.questionViewController?.gotoNextQuestion(currentQuestion: self.question!.idx)
                 })
-                SpeechService.shared.playFileName(name: "correct.mp3")
+                
                 if let handler = self.didAnswerCorrect {
                     handler()
                 }
             } else {
                 ToastView.showFalseAnswerToastForView(view: self.toFillView)
-                SpeechService.shared.playFileName(name: "wrong.mp3")
+                if let handler = self.didAnswerWrong {
+                    handler()
+                }
             }
         }
     }

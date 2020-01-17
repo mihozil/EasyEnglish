@@ -11,7 +11,7 @@ import UIKit
 class LessonViewController: UIViewController  {
     
     var collectionView : UICollectionView?
-    var items : Array<LessonModel>?
+    var items : Array<LessonModel> = []
     var unitId : Int?
     var topbar : UIView?
    
@@ -34,7 +34,12 @@ class LessonViewController: UIViewController  {
     
                self.view.addSubview(collectionView!)
                
-        items = DataManager.fetchUnitWithId(unitId: self.unitId!)
+        DataManager.fetchUnitWithFirebase(unitId: self.unitId!, completion: {
+            allLessons in
+            self.items = allLessons
+            self.updateLessonsProgress()
+            self.collectionView?.reloadData()
+        })
         
         // Do any additional setup after loading the view.
         collectionView!.dataSource = self
@@ -77,13 +82,9 @@ class LessonViewController: UIViewController  {
         self.navigationController?.popViewController(animated: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.updateLessonsProgress() // minhnht noted : may be update later
-        self.collectionView?.reloadData()
-    }
     
     func updateLessonsProgress() {
-        for item in items! {
+        for item in items {
             let userInfo = UserManager.shared.user
             if let toQuestion = userInfo?.getLessonToQuestion(unitId: self.unitId!, lessonId: item.lessonId) {
                 item.toQuestion = toQuestion
@@ -119,11 +120,11 @@ extension LessonViewController : UICollectionViewDataSource {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items!.count
+        return self.items.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : LessonCollectionCell =  collectionView.dequeueReusableCell(withReuseIdentifier: LessonCollectionCell.identifier, for: indexPath) as! LessonCollectionCell
-        let item = items![indexPath.item]
+        let item = items[indexPath.item]
         cell.lesson = item
         return cell
     }
@@ -131,9 +132,8 @@ extension LessonViewController : UICollectionViewDataSource {
 
 extension LessonViewController :UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let questionVC = MultiSelectionQuestionsViewController.init()
-        let lesson = self.items![indexPath.item]
-        questionVC.questions = DataManager.fetchLessonWithId(lessonId: lesson.lessonId, unitId: QuestionFlowManager.shared.currentUnitId!)
+        let questionVC = QuestionsViewController.init()
+        let lesson = self.items[indexPath.item]
         questionVC.lesson = lesson
         QuestionFlowManager.shared.currentLessonId = lesson.lessonId
         self.navigationController?.pushViewController(questionVC, animated: true)
